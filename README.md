@@ -8,15 +8,13 @@ According to [Google Suport]](https://support.google.com/a/answer/10026322?hl=en
 there are two endpoints from google. One is providing information about all IP ranges announced by Google and
 one with all ranges used by google could customers.
 
-While the second is a subset of the first (in terms od IPs not ranges) we need to
+While the second list of IP ranges is a subset of the first we need to
  create a diffset which can easily be done using the package `netaddr`.
 
-The ranges are updated daily using cloud scheduler and cloud functions.
-
-Cloud function and scheduler are deployed by administrators of the `bmg-networing` project.
+The can be updated periodically using cloud scheduler and cloud functions.
 
 For this to work:
-1. a service account used by the cloud function required 'Deployment Manager Editor' permission.
+1. a service account used by the cloud function requires 'Deployment Manager Editor' permission.
 1. and the service account used by the scheduler requires permission to invoke the cloud function.
 
 For HTTP:
